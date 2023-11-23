@@ -1,0 +1,4 @@
+Readers\XmlReader.class
+Main.class
+Model\Manufacturer.class
+Writers\JsonWriter.class
