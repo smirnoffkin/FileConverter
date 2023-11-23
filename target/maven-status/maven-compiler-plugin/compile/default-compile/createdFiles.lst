@@ -1,4 +1,6 @@
-Readers\XmlReader.class
 Main.class
-Model\Manufacturer.class
 Writers\JsonWriter.class
+Readers\XmlReader.class
+Writers\XmlWriter.class
+Model\Manufacturer.class
+Readers\JsonReader.class
