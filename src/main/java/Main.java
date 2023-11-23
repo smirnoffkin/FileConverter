@@ -1,11 +1,12 @@
 import Model.Manufacturer;
+import Readers.JsonReader;
 import Readers.XmlReader;
 import Writers.JsonWriter;
-import Readers.JsonReader;
 import Writers.XmlWriter;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -20,7 +21,14 @@ public class Main {
 
         String inputExtension = getFileExtension(inputFile);
 
-        if (inputExtension.equalsIgnoreCase("json")) {
+        if (inputExtension.equalsIgnoreCase("xml")) {
+            // Преобразование XML в JSON
+            ArrayList<Manufacturer> manufacturers = readXml(inputFile);
+            if (manufacturers != null) {
+                writeJson(outputFile, manufacturers);
+                System.out.println("Преобразование XML в JSON завершено");
+            }
+        } else if (inputExtension.equalsIgnoreCase("json")) {
             // Преобразование JSON в XML
             ArrayList<Manufacturer> manufacturers = readJson(inputFile);
             if (manufacturers != null) {
@@ -49,6 +57,7 @@ public class Main {
         JsonWriter writer = new JsonWriter(manufacturers);
         writer.write(filePath);
     }
+
     private static ArrayList<Manufacturer> readJson(String filePath) throws IOException {
         JsonReader reader = new JsonReader(filePath);
         return reader.read();
