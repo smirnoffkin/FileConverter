@@ -18,17 +18,17 @@ public class Main {
 
         String inputExtension = getFileExtension(inputFile);
 
-        if (inputExtension.equalsIgnoreCase("xml")) {
-            // Преобразование XML в JSON
-            ArrayList<Manufacturer> manufacturers = readXml(inputFile);
-            if (manufacturers != null) {
-                writeJson(outputFile, manufacturers);
-                System.out.println("Преобразование XML в JSON завершено");
-            }
-        }
-        else {
-            System.out.println("Неподдерживаемый формат файла");
-        }
+//        if (inputExtension.equalsIgnoreCase("xml")) {
+//            // Преобразование XML в JSON
+//            ArrayList<Manufacturer> manufacturers = readXml(inputFile);
+//            if (manufacturers != null) {
+//                writeJson(outputFile, manufacturers);
+//                System.out.println("Преобразование XML в JSON завершено");
+//            }
+//        }
+//        else {
+//            System.out.println("Неподдерживаемый формат файла");
+//        }
     }
 
     private static String getFileExtension(String filePath) {
