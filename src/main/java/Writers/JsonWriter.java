@@ -36,7 +36,9 @@ public class JsonWriter {
 
             JSONObject manufacturerTag = new JSONObject();
             manufacturerTag.put("name", manufacturer.getNAME());
+
             manufacturerTag.put("processor", allProcessorsOfManufacturer);
+
 
             String architecture = manufacturer.getARCHITECTURE();
             if (architectureAndManufacturers.containsKey(architecture)) {
@@ -57,6 +59,7 @@ public class JsonWriter {
         JSONObject architectureTag = new JSONObject();
         architectureTag.put("architecture", architectureList);
 
+
         JSONObject manufacturersTag = new JSONObject();
         manufacturersTag.put("manufacturers", architectureTag);
 
@@ -68,7 +71,9 @@ public class JsonWriter {
         Map<String, Integer> manufacturerProcessors = manufacturer.getCPUs();
         for (String nameProcessor : manufacturerProcessors.keySet()) {
             JSONObject processorTag = new JSONObject();
+
             processorTag.put("name", nameProcessor);
+
             processorTag.put("core", manufacturerProcessors.get(nameProcessor));
 
             allProcessorsOfManufacturer.put(processorTag);

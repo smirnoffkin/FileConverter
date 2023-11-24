@@ -34,7 +34,9 @@ public class XmlReader {
 
             for (int i = 0; i < architectureNodes.getLength(); i++) {
                 Element architectureElement = (Element) architectureNodes.item(i);
+
                 String architectureName = architectureElement.getAttribute("name");
+
 
                 NodeList manufacturerNodes = architectureElement.getElementsByTagName("manufacturer");
 
